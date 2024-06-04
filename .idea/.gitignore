@@ -1,0 +1,18 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+/accords.iml
+/modules.xml
+/misc.xml
+/kotlinc.xml
+/jarRepositories.xml
+/gradle.xml
+/codeStyles/codeStyleConfig.xml
+/vcs.xml
+/sbt.xml
+/codeStyles/Project.xml
