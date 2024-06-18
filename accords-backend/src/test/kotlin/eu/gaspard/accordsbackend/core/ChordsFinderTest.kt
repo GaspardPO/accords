@@ -1,12 +1,14 @@
 package eu.gaspard.accordsbackend.core
 
 import eu.gaspard.accordsbackend.core.Note.*
+import eu.gaspard.accordsbackend.core.chordsRepository.AllSimpleChordsRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class ChordsFinderTest {
-    val allChords = ChordsGenerator().generateAllChords()
-    val finder = ChordsFinder(allChords)
+    val chordsRepository: ChordsRepository = AllSimpleChordsRepository()
+
+    val finder = ChordsFinder(chordsRepository)
 
     @Test
     fun should_return_Major_chords() {

@@ -14,15 +14,18 @@ Algo:
 [api folder](accords-backend/src/main/kotlin/eu/gaspard/accordsbackend/api): controllers, rest api.
 
 ### api 
-- [ ] uses character (A, B, C ...)
+- [x] uses character (A, B, C ...)
+- [ ] error : when character is not a note
 - [ ] uses # or s for sharp
 - [ ] uses b for flat
 - [ ] uses notes (Do, Ré, Mi ...)
-- [ ] output: chord name
+- [ ] german notation ?
+- [x] output: chord name (A, B, C)
+- [ ] output: chord name (Do, Ré, Mi)
 - [ ] output: chord info (name, interval, third,
 - [ ] display the chord name using b and # ?
 
-### business core:
+### business core: notes to chord
 - [x] perfect major
 - [x] perfect minor
 - [x] (dominant) 7th : maj7, min7, m(maj7)

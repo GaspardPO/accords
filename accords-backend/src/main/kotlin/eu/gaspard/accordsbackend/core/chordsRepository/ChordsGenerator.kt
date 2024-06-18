@@ -1,9 +1,11 @@
-package eu.gaspard.accordsbackend.core
+package eu.gaspard.accordsbackend.core.chordsRepository
+
+import eu.gaspard.accordsbackend.core.*
 
 class ChordsGenerator {
 
     fun generateAllChords(): List<Chord> =
-        Note.values().flatMap { listOf(
+        Note.entries.flatMap { listOf(
             MajorChord(it),
             MinorChord(it),
             SeventhChord(it),

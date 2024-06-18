@@ -16,3 +16,5 @@
 /vcs.xml
 /sbt.xml
 /codeStyles/Project.xml
+/compiler.xml
+/tests-end-to-end/tests-end-to-end.iml

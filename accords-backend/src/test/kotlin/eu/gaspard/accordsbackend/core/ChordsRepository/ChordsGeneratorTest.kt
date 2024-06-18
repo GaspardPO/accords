@@ -1,5 +1,6 @@
-package eu.gaspard.accordsbackend.core
+package eu.gaspard.accordsbackend.core.ChordsRepository
 
+import eu.gaspard.accordsbackend.core.chordsRepository.ChordsGenerator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
