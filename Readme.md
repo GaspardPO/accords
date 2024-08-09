@@ -40,7 +40,7 @@ Algo:
 - [ ] chords with other notes, using the first as root?  
   ...
 - [x] sharp/flat (using fretted instrument, D# == Eb)
-- [ ] display Bb and Eb instead of A# and D# 
+- [x] display Bb and Eb instead of A# and D# 
 - [x] error when chord not found
   ...
 - [ ] use a csv config file with the chords list ?

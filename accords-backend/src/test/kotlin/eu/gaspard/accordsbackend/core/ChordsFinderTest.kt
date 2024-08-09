@@ -18,7 +18,7 @@ class ChordsFinderTest {
         assertThat(finder.findExactly(F, A, C)?.name).isEqualTo("F")
         assertThat(finder.findExactly(G, B, D)?.name).isEqualTo("G")
         assertThat(finder.findExactly(A, Cs, E)?.name).isEqualTo("A")
-        assertThat(finder.findExactly(As, D, F)?.name).isEqualTo("A#")
+        assertThat(finder.findExactly(As, D, F)?.name).isEqualTo("Bb")
 
         // reversed:
         assertThat(finder.findExactly(E, G, C)?.name).isEqualTo("C")
@@ -28,7 +28,7 @@ class ChordsFinderTest {
     @Test
     fun should_return_Minor_chords() {
         assertThat(finder.findExactly(A, C, E)?.name).isEqualTo("Am")
-        assertThat(finder.findExactly(As, Cs, F)?.name).isEqualTo("A#m")
+        assertThat(finder.findExactly(As, Cs, F)?.name).isEqualTo("Bbm")
         assertThat(finder.findExactly(C, Ds, G)?.name).isEqualTo("Cm")
 
         // reversed:

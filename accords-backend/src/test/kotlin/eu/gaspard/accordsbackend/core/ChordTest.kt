@@ -66,4 +66,15 @@ internal class ChordTest {
         assertThat(CAug.notes).containsOnly(C, E, Gs)
         assertThat(CAug.name).isEqualTo("Caug")
     }
+
+    @Test
+    fun should_use_flat_as_default_for_Bb_and_Eb() {
+        val bbMajor = MajorChord(As)
+        assertThat(bbMajor.notes).containsOnly(As, F, D)
+        assertThat(bbMajor.name).isEqualTo("Bb")
+
+        val ebMajor = MajorChord(Ds)
+        assertThat(ebMajor.notes).containsOnly(Ds, As, G)
+        assertThat(ebMajor.name).isEqualTo("Eb")
+    }
 }

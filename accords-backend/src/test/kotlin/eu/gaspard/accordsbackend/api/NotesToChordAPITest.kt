@@ -44,7 +44,7 @@ class NotesToChordAPITest @Autowired constructor(val mockMvc: MockMvc) {
             .andDo { print() }.andExpect {
                 status { isOk() }
                 content { contentType(MediaType.APPLICATION_JSON) }
-                jsonPath("name") { value("A#m") }
+                jsonPath("name") { value("Bbm") }
             }
     }
 
