@@ -42,4 +42,11 @@ internal class StringToNotesConverterShould {
         assertThat("e,b".asNotes()).containsExactly(E, B)
         assertThat("e b".asNotes()).containsExactly(E, B)
     }
+
+    @Test
+    fun should_remove_invalid_symbols() {
+        assertThat("a,k".asNotes()).containsExactly(A)
+        assertThat("akjd".asNotes()).containsExactly(A,D)
+        assertThat("éé".asNotes()).isEmpty()
+    }
 }

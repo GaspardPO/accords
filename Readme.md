@@ -15,9 +15,10 @@ Algo:
 
 ### api 
 - [x] uses character (A, B, C ...)
-- [ ] error : when character is not a note
-- [ ] uses # or s for sharp
-- [ ] uses b for flat
+- [X] error : when character is not a note
+- [ ] error ? warning ? when character is a note but not enough to find the chords ?
+- [x] uses b or s for flat and sharp
+- [ ] uses # for sharp (works in real life but not in tests ?)
 - [ ] uses notes (Do, Ré, Mi ...)
 - [ ] german notation ?
 - [x] output: chord name (A, B, C)
@@ -35,10 +36,11 @@ Algo:
 - [x] Don't use the first notes as root (inversion).
 - [ ] say when a chord is reversed
 - [x] chords with exactly the given notes
-- [ ] chords with other notes (not only the ones given as input)
+- [ ] chords with other notes (not only the ones given as input : eg: E, C -> Am, C)
 - [ ] chords with other notes, using the first as root?  
   ...
 - [x] sharp/flat (using fretted instrument, D# == Eb)
+- [ ] display Bb and Eb instead of A# and D# 
 - [x] error when chord not found
   ...
 - [ ] use a csv config file with the chords list ?
