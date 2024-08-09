@@ -46,4 +46,23 @@ class ChordsFinderTest {
         assertThat(finder.findExactly(A)).isNull()
         assertThat(finder.findExactly(A, E)).isNull()
     }
+
+    @Test
+    fun should_find_plausibles_chords() {
+        assertThat(finder.find(C, E))
+            .containsExactlyInAnyOrder(
+                MinorChord(A),
+                MinorSeventhChord(A),
+                MinorWithMajorSeventhChord(A),
+                MajorChord(C),
+                MajorSeventhChord(C),
+                SeventhChord(C),
+                AugmentedChord(C),
+                MinorWithMajorSeventhChord(Cs),
+                MajorSeventhChord(F),
+                MinorWithMajorSeventhChord(F),
+                AugmentedChord(Gs),
+                AugmentedChord(E),
+                )
+    }
 }

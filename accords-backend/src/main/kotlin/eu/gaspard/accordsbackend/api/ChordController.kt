@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.*
 class ChordController(private val chordsFinder: ChordsFinder) {
 
     @GetMapping
-    fun translateNotesToChord(@RequestParam(name = "notes") notesAsString: String): Chord {
+    fun translateNotesToChord(@RequestParam(name = "notes") notesAsString: String): ChordFinderResponse {
         val notes = notesAsString.asNotes()
-        if (notes.isEmpty()) throw IllegalArgumentException("\"$notes\" does not contains a valid note.")
-        return chordsFinder.findExactly(*notes)!!
-    }
+        if (notes.isEmpty()) throw IllegalArgumentException("\"$notesAsString\" does not contains a valid note.")
+        val exactChord = chordsFinder.findExactly(*notes)
+        val plausibleChords = chordsFinder.find(*notes).toMutableList()
+        plausibleChords.remove(exactChord)
 
+        return ChordFinderResponse(exactChord, plausibleChords)
+    }
     @ExceptionHandler(IllegalArgumentException::class)
     fun handleBadRequest(e: IllegalArgumentException): ResponseEntity<String> =
         ResponseEntity(e.message, HttpStatus.BAD_REQUEST)

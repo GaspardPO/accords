@@ -10,6 +10,33 @@ abstract class Chord(val notes: List<Note>, val suffix: String = "") {
 
     fun containsExactly(notes: Array<out Note>) =
         this.notes.toSortedSet().equals(notes.toSet())
+
+    fun contains(notes: Array<out Note>): Boolean =
+        this.notes.toSortedSet().containsAll(notes.toList())
+
+    override fun toString(): String {
+        return "$name ($notes)"
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Chord) return false
+
+        if (notes != other.notes) return false
+        if (suffix != other.suffix) return false
+        if (name != other.name) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = notes.hashCode()
+        result = 31 * result + suffix.hashCode()
+        result = 31 * result + name.hashCode()
+        return result
+    }
+
+
 }
 
 class MajorChord(root: Note) : Chord(root, intArrayOf(0, 4, 7))
